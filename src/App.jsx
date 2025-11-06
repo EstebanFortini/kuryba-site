@@ -20,14 +20,6 @@ import React, { useEffect, useState } from 'react'
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  function BrandLogo({ className = '' }) {
-    return (
-      <div className={`flex items-baseline gap-1 select-none ${className}`}>
-        <span className="font-extrabold tracking-tight text-2xl">Kūryba</span>
-        <span className="italic text-base font-light opacity-90">Studio</span>
-      </div>
-    );
-  }
 
   function NavBar() {
     const links = [
@@ -44,7 +36,6 @@ import React, { useEffect, useState } from 'react'
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-3">
             <img src={logo} alt="Kūryba Studio" className="h-8 w-auto drop-shadow-sm" />
-            <BrandLogo />
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {links.map((l) => (
@@ -374,7 +365,6 @@ import React, { useEffect, useState } from 'react'
           <div>
             <div className="flex items-center gap-3">
               <img src={logo} alt="Kūryba Studio" className="h-8 w-auto drop-shadow-sm" />
-              <BrandLogo />
             </div>
             <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 max-w-sm">
               Somos una agencia con base en Argentina y raíces lituanas. 
