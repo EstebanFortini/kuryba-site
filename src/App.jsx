@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
   import { motion } from 'framer-motion'
   import { Code2, Wrench, Palette, LineChart, Globe2, Instagram, ArrowRight, ChevronRight, Mail, Linkedin, CheckCircle2, ShieldCheck, CalendarClock } from 'lucide-react'
   import logo from './assets/logo.png'
