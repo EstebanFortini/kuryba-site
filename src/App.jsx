@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
   import { motion } from 'framer-motion'
-  import { Code2, Palette, Wrench, LineChart, Globe2, Instagram, ArrowRight, ChevronRight, Mail, Linkedin, CheckCircle2, X, ShieldCheck, CalendarClock } from 'lucide-react'
+  import { Code2, Palette, LineChart, Globe2, Instagram, ArrowRight, ChevronRight, Mail, Linkedin, CheckCircle2, ShieldCheck, CalendarClock } from 'lucide-react'
   import logo from './assets/logo.png'
   import heroImg from './assets/hero.avif'
 
@@ -417,55 +417,7 @@ import React, { useEffect, useState } from 'react'
     );
   }
 
-  function DevDeployHint() {
-    const [open, setOpen] = useState(false);
-    return (
-      <>
-        <button onClick={() => setOpen(true)} className="fixed bottom-4 right-4 z-[70] inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow border border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/90 backdrop-blur hover:shadow-md">
-          <Wrench className="w-4 h-4" /> Deploy
-        </button>
-        {open && (
-          <div className="fixed inset-0 z-[80]">
-            <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-            <div className="absolute inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 top-10 md:top-16 md:w-[720px] rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl">
-              <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
-                <div className="font-bold">Guía rápida: Deploy en Hostinger (Business Web Hosting)</div>
-                <button onClick={() => setOpen(false)} className="p-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800"><X className="w-4 h-4" /></button>
-              </div>
-              <div className="p-4 space-y-4 text-sm">
-                <ol className="list-decimal pl-5 space-y-2">
-                  <li>
-                    <strong>Compilar</strong> (Vite): <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">npm run build</code>
-                  </li>
-                  <li>
-                    <strong>Subir</strong> el contenido de <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">dist/</code> a tu <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">public_html/</code> (File Manager o FTP). No necesitás Node.
-                  </li>
-                  <li>
-                    <strong>Opcional (si usás React Router):</strong> agregá <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">.htaccess</code> con fallback a <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">/index.html</code>:
-                    <pre className="mt-2 p-3 rounded-xl bg-neutral-900 text-neutral-100 overflow-auto">RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]</pre>
-                  </li>
-                  <li>
-                    <strong>Formularios sin backend:</strong> usá Formspree / EmailJS o pasá a WP + Elementor Forms.
-                  </li>
-                  <li>
-                    <strong>Perf/SEO rápido:</strong> imágenes WebP con <code className="px-1 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800">loading="lazy"</code>, meta title/description y <em>display=swap</em> en fuentes.
-                  </li>
-                </ol>
-                <div className="text-xs text-neutral-600 dark:text-neutral-400">
-                  Tip: si lo publicás en GitHub Pages, base './' ya viene configurada en vite.config.js.
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </>
-    );
-  }
+ 
 
   export default function App() {
     useEffect(() => {
@@ -486,7 +438,6 @@ RewriteRule . /index.html [L]</pre>
         <Equipo />
         <Contacto />
         <Footer />
-        <DevDeployHint />
       </div>
     );
   }
