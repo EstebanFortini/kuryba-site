@@ -419,14 +419,7 @@ import React, { useEffect, useState } from 'react'
 
  
 
-  export default function App() {
-    useEffect(() => {
-      // Dark mode automático según preferencia del SO
-      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
-    }, []);
-
+  export default function App() {    
     return (
       <div className="min-h-screen text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-900">
         <NavBar />
