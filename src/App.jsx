@@ -124,19 +124,19 @@ import React, { useEffect, useState } from 'react'
         desc: 'Soporte mensual, backups, updates y mejoras continuas.', bullets: ['Hardening + seguridad', 'Velocidad y uptime', 'Pequeños cambios incluidos'],
       },
       {
-        icon: <Palette className="w-6 h-6" />, title: 'Adicional: Diseño UX/UI', color: BRAND.red,
+        icon: <Palette className="w-6 h-6" />, title: 'Diseño UX/UI', color: BRAND.red,
         desc: 'Prototipado en Figma para apps y sitios web complejos.', bullets: ['UI kit en Figma', 'Prototipos mobile-first', 'Sistemas de diseño'],
       },
       {
-        icon: <Globe2 className="w-6 h-6" />, title: 'Adicional: Identidad Visual', color: BRAND.yellow,
+        icon: <Globe2 className="w-6 h-6" />, title: 'Identidad Visual', color: BRAND.yellow,
         desc: 'Creación de sistemas de marca y branding digital.', bullets: ['Manual de marca', 'Logo y paleta', 'Piezas gráficas base'],
       },
       {
-        icon: <Instagram className="w-6 h-6" />, title: 'Adicional: Redes', color: BRAND.green,
+        icon: <Instagram className="w-6 h-6" />, title: 'Redes', color: BRAND.green,
         desc: 'Estrategia de contenido y plantillas para redes sociales.', bullets: ['Plantillas RRSS', 'Análisis de métricas', 'Tono de voz'],
       },
       {
-        icon: <LineChart className="w-6 h-6" />, title: 'Adicional: SEO', color: BRAND.red,
+        icon: <LineChart className="w-6 h-6" />, title: 'SEO', color: BRAND.red,
         desc: 'Optimización On-Page y configuración de analítica.', bullets: ['Keyword research', 'Schema básico', 'Google Analytics (GA4)'],
       },
     ];
@@ -202,43 +202,68 @@ import React, { useEffect, useState } from 'react'
 
   function Proceso() {
     const steps = [
-      { icon: <Palette className="w-5 h-5" />, title: 'Descubrimiento', text: 'Brief, objetivos, alcance y referencias.' },
-      { icon: <Code2 className="w-5 h-5" />, title: 'Diseño + Dev', text: 'Figma → WordPress/Elementor con nuestro blueprint.' },
-      { icon: <ShieldCheck className="w-5 h-5" />, title: 'QA + Lanzamiento', text: 'Pruebas, performance, seguridad y SEO básico.' },
-      { icon: <CalendarClock className="w-5 h-5" />, title: 'Mantenimiento', text: 'Backups, updates, mejoras y campañas.' },
-    ];
-    return (
-      <section id="proceso" className="py-16 md:py-24 bg-white dark:bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-3xl md:text-4xl font-extrabold italic mb-8">Nuestro proceso</motion.h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {steps.map((s, i) => (
-              <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl" style={{ backgroundColor: BRAND.yellow + '22' }}>{s.icon}</div>
-                  <h3 className="font-bold">{s.title}</h3>
-                </div>
-                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">{s.text}</p>
-              </motion.div>
-            ))}
-          </div>
+    { 
+      icon: <Palette className="w-5 h-5" />, 
+      title: "Descubrimiento", 
+      text: "Comenzamos con un brief completo para entender tus objetivos, definir el alcance y la estructura del sitio." 
+    },
+    { 
+      icon: <Code2 className="w-5 h-5" />, 
+      title: "Diseño + Dev", 
+      text: "Prototipamos el diseño en Figma y luego lo construimos en WordPress + Elementor con buenas prácticas." 
+    },
+    { 
+      icon: <ShieldCheck className="w-5 h-5" />, 
+      title: "QA + Lanzamiento", 
+      text: "Testeamos la funcionalidad y responsividad. Optimizamos performance, seguridad y SEO básico antes de publicar." 
+    },
+    { 
+      icon: <CalendarClock className="w-5 h-5" />, 
+      title: "Mantenimiento", 
+      text: "Ofrecemos soporte mensual para actualizaciones, monitoreo de seguridad, backups y revisiones funcionales." 
+    },
+  ];
+  
+  return (
+    <section id="proceso" className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2 
+          variants={fadeUp} 
+          initial="hidden" 
+          whileInView="show" 
+          viewport={{ once: true }} 
+          className="text-3xl md:text-4xl font-extrabold italic mb-8"
+        >
+          Nuestro proceso
+        </motion.h2>
+        <div className="grid md:grid-cols-4 gap-6">
+          {steps.map((s, i) => (
+            <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-xl" style={{ backgroundColor: BRAND.yellow + "22" }}>{s.icon}</div>
+                <h3 className="font-bold">{s.title}</h3>
+              </div>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">{s.text}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
 
   function Planes() {
     const tiers = [
       {
         name: 'Landing Page',
-        price: 'USD 120',
+        price: 'USD 300 +',
         color: BRAND.yellow,
         best: false,
         features: ['Sitio web de 1 página', 'Diseño responsive', 'Formulario de contacto', 'Integración WhatsApp', 'SEO on-page básico'],
       },
       {
         name: 'Sitio Institucional',
-        price: 'USD 300',
+        price: 'USD 500 +',
         color: BRAND.green,
         best: true,
         features: ['Hasta 5 páginas', 'Diseño responsive', 'Blog básico', 'Formularios', 'Soporte 15 días'],
@@ -285,7 +310,7 @@ import React, { useEffect, useState } from 'react'
 
   function Equipo() {
     const people = [
-      { name: 'Esteban Fortini', role: 'Web Dev / WordPress + Elementor', color: BRAND.yellow },
+      { name: 'Esteban', role: 'Web Dev / WordPress + Elementor', color: BRAND.yellow },
       { name: 'Gaby', role: 'UX/UI Designer', color: BRAND.green },
       { name: 'Kevin', role: 'Marketing Digital / Estrategia', color: BRAND.red },
     ];
